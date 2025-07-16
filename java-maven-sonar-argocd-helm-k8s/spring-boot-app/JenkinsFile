@@ -51,6 +51,7 @@ pipeline {
         GIT_USER_NAME = "DevasaniNaveen"
     }
     steps {
+        cleanWs() // Cleans the workspace before running any commands
         withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
             sh '''
                 # Clone the repo
